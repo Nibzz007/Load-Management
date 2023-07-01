@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_sizes.dart';
 import 'package:load_management/core/app_style.dart';
+import 'package:load_management/src/view/main%20screen/main_screen.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
 
@@ -37,7 +38,13 @@ class LogInScreen extends StatelessWidget {
               ),
               kHeight40,
               ElevatedButtonWidget(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => MainScreen(),
+                    ),
+                  );
+                },
                 text: 'लाॅगिन',
                 widget: const Icon(
                   Icons.login,

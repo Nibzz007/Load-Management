@@ -8,12 +8,15 @@ class ElevatedButtonWidget extends StatelessWidget {
   const ElevatedButtonWidget({
     super.key,
     required this.onPressed,
-    required this.text, this.widget,
+    required this.text,
+    this.widget,
+    this.backgroundColor = kDeepPurple,
   });
 
   final void Function()? onPressed;
   final String text;
   final Widget? widget;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +28,8 @@ class ElevatedButtonWidget extends StatelessWidget {
         style: elevatedButtonStyle,
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: kDeepPurple,
-        fixedSize: const Size(200, 50)
+        backgroundColor: backgroundColor,
+        fixedSize: const Size(300, 50),
       ),
     );
   }

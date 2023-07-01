@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_images.dart';
-import 'package:load_management/src/view/language_selection_screen.dart';
+import 'package:load_management/src/view/language%20selection%20screen/language_selection_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

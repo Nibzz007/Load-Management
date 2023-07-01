@@ -9,22 +9,26 @@ class TextFormFieldWidget extends StatelessWidget {
     required this.hintText,
     required this.keyboardType,
     this.obscureText = false,
+    this.fillColor = kWhite
   });
 
   final Widget? prefixIcon;
   final String hintText;
   final TextInputType keyboardType;
   bool obscureText;
+  final Color fillColor;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       obscureText: obscureText,
       keyboardType: keyboardType,
+      cursorHeight: 25,
+      style: const TextStyle(height: 1.2,fontSize: 17),
       decoration: InputDecoration(
         floatingLabelStyle: textFormFieldStyle,
         filled: true,
-        fillColor: kWhite,
+        fillColor: fillColor,
         hintText: hintText,
         prefixIcon: prefixIcon,
         border: OutlineInputBorder(

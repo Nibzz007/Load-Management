@@ -3,7 +3,7 @@ import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_images.dart';
 import 'package:load_management/core/app_sizes.dart';
 import 'package:load_management/core/app_style.dart';
-import 'package:load_management/src/view/login_screen.dart';
+import 'package:load_management/src/view/login%20screen/login_screen.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
 
 class SelectLanguageScreen extends StatelessWidget {
