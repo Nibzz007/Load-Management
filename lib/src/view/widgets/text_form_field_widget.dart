@@ -9,7 +9,9 @@ class TextFormFieldWidget extends StatelessWidget {
     required this.hintText,
     required this.keyboardType,
     this.obscureText = false,
-    this.fillColor = kWhite
+    this.fillColor = kWhite,
+    this.readOnly = false,
+    this.onTap, this.controller,
   });
 
   final Widget? prefixIcon;
@@ -17,14 +19,20 @@ class TextFormFieldWidget extends StatelessWidget {
   final TextInputType keyboardType;
   bool obscureText;
   final Color fillColor;
+  final void Function()? onTap;
+  final bool readOnly;
+  final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onTap: onTap,
+      readOnly: readOnly,
       obscureText: obscureText,
       keyboardType: keyboardType,
       cursorHeight: 25,
-      style: const TextStyle(height: 1.2,fontSize: 17),
+      style: const TextStyle(height: 1.2, fontSize: 17),
       decoration: InputDecoration(
         floatingLabelStyle: textFormFieldStyle,
         filled: true,

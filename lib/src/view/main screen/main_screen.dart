@@ -26,7 +26,7 @@ class MainScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const NewScheduleScreen(),
+                    builder: (context) => NewScheduleScreen(),
                   ),
                 );
               },
