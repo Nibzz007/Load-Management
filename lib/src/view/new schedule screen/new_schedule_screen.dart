@@ -32,6 +32,7 @@ class NewScheduleScreen extends StatelessWidget {
             return SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const TextWidget(
                     text: 'How many days required for irrigation',
@@ -65,25 +66,41 @@ class NewScheduleScreen extends StatelessWidget {
                     },
                     readOnly: true,
                   ),
-                  kHeight40,
-                  ElevatedButtonWidget(
-                    onPressed: () {},
-                    text: 'Irrigation requirements',
-                    widget: const Icon(
-                      Icons.list_alt_outlined,
-                      color: kWhite,
-                    ),
-                    backgroundColor: kGreen,
-                  ),
                   kHeight20,
-                  ElevatedButtonWidget(
-                    onPressed: () {},
-                    text: 'Create schedule',
-                    widget: const Icon(
-                      Icons.schedule_outlined,
-                      color: kWhite,
-                    ),
-                    backgroundColor: kGreen,
+                  const TextWidget(text: 'Duration of power supply'),
+                  kHeight20,
+                  TextFormFieldWidget(
+                    hintText: 'Eg: 2 ',
+                    keyboardType: TextInputType.number,
+                  ),
+                  kHeight40,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        children: [
+                          ElevatedButtonWidget(
+                            onPressed: () {},
+                            text: 'Irrigation requirements',
+                            widget: const Icon(
+                              Icons.list_alt_outlined,
+                              color: kWhite,
+                            ),
+                            backgroundColor: kGreen,
+                          ),
+                          kHeight20,
+                          ElevatedButtonWidget(
+                            onPressed: () {},
+                            text: 'Create schedule',
+                            widget: const Icon(
+                              Icons.schedule_outlined,
+                              color: kWhite,
+                            ),
+                            backgroundColor: kGreen,
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                 ],
               ),

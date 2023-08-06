@@ -22,7 +22,6 @@ class TextFormFieldWidget extends StatelessWidget {
   final void Function()? onTap;
   final bool readOnly;
   final TextEditingController? controller;
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -38,6 +37,7 @@ class TextFormFieldWidget extends StatelessWidget {
         filled: true,
         fillColor: fillColor,
         hintText: hintText,
+        hintStyle: hintStyle,
         prefixIcon: prefixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),

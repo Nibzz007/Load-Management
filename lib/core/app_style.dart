@@ -40,12 +40,18 @@ TextStyle appBarTextStyle = const TextStyle(
 
 // Create new schedele
 
-TextStyle textWidgetTextStyle =
-    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
+TextStyle textWidgetTextStyle = const TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w500,
+);
+
+TextStyle hintStyle = const TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+  color: kBlack26,
+);
 
 // Farmers list
 
-TextStyle listTileTextStyle = const TextStyle(
-  fontSize: 25,
-  fontWeight: FontWeight.w500
-);
+TextStyle listTileTextStyle =
+    const TextStyle(fontSize: 25, fontWeight: FontWeight.w500);

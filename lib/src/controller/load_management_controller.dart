@@ -13,4 +13,6 @@ class LoadManagementController extends GetxController {
     'Fruits',
     'Others',
   ];
+
+  
 }
