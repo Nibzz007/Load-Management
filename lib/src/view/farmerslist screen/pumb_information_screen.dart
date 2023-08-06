@@ -5,7 +5,6 @@ import 'package:load_management/src/controller/drop_down_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/widgets/drop_down_container_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
 import 'package:load_management/src/view/widgets/text_widget.dart';
-
 import '../../../core/app_color.dart';
 import '../widgets/common_appbar_widget.dart';
 import '../widgets/elevated_button_widget.dart';
@@ -26,7 +25,7 @@ class PumbInformationScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: CommonAppbarWidget(
           text: 'Add Pumb information',
@@ -40,7 +39,7 @@ class PumbInformationScreen extends StatelessWidget {
           child: Column(
             children: [
               kHeight20,
-              TextWidget(text: 'DT id'),
+              const TextWidget(text: 'DT id'),
               kHeight10,
               DropDownContainerWidget(
                 height: height,
@@ -48,14 +47,14 @@ class PumbInformationScreen extends StatelessWidget {
                 hintText: 'DT id',
               ),
               kHeight20,
-              TextWidget(text: 'Pumb capacity'),
+              const TextWidget(text: 'Pumb capacity'),
               kHeight10,
               TextFormFieldWidget(
                 hintText: '50hP',
                 keyboardType: TextInputType.number,
               ),
               kHeight20,
-              TextWidget(text: 'Source type'),
+              const TextWidget(text: 'Source type'),
               kHeight10,
               DropDownContainerWidget(
                 height: height,
@@ -63,8 +62,9 @@ class PumbInformationScreen extends StatelessWidget {
                 hintText: 'Select the water source',
               ),
               kHeight20,
-              TextWidget(
-                  text: 'Water pumping directly to field from water source'),
+              const TextWidget(
+                text: 'Water pumping directly to field from water source',
+              ),
               kHeight10,
               Obx(
                 () => RadioListTile(
@@ -101,8 +101,7 @@ class PumbInformationScreen extends StatelessWidget {
                       ),
                       kHeight20,
                       ElevatedButtonWidget(
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         text: 'Continue',
                         widget: const Icon(
                           Icons.navigate_next,

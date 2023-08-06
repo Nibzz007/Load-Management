@@ -4,7 +4,7 @@ import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_sizes.dart';
 import 'package:load_management/core/app_style.dart';
 import 'package:load_management/src/view/farmerslist%20screen/add_new_farmer_screen.dart';
-import 'package:load_management/src/view/farmerslist%20screen/farmer_irrigation_requirement_screen.dart';
+import 'package:load_management/src/view/farmerslist%20screen/farmer_crops_screen.dart';
 import 'package:load_management/src/view/widgets/common_appbar_widget.dart';
 
 class FarmersListScreen extends StatelessWidget {
@@ -47,7 +47,8 @@ class FarmersListScreen extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) =>
-                              const FarmerIrrigationRequirementScreen(),
+                              // const FarmerIrrigationRequirementScreen(),
+                              const FarmerCropsScreen(),
                         ),
                       );
                     },
