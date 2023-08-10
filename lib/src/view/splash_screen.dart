@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_images.dart';
-import 'package:load_management/src/view/language%20selection%20screen/language_selection_screen.dart';
+import 'package:load_management/src/view/main%20screen/main_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -11,17 +11,15 @@ class SplashScreen extends StatelessWidget {
     goToHome(context);
     return Scaffold(
       backgroundColor: kBlack,
-      body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Image.asset(
-            splashImage,
-            fit: BoxFit.cover,
-          ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Image.asset(
+          splashImage,
+          fit: BoxFit.cover,
         ),
       ),
     );
@@ -31,7 +29,7 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 3)).then(
       (value) => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const SelectLanguageScreen(),
+          builder: (context) => const MainScreen(),
         ),
       ),
     );

@@ -4,11 +4,12 @@ import '../../../core/app_sizes.dart';
 import '../../../core/app_style.dart';
 
 class ContainerWidget extends StatelessWidget {
-  const ContainerWidget(
-      {super.key,
-      required this.height,
-      required this.icon,
-      required this.text});
+  const ContainerWidget({
+    super.key,
+    required this.height,
+    required this.icon,
+    required this.text,
+  });
 
   final double height;
   final IconData icon;
@@ -20,7 +21,7 @@ class ContainerWidget extends StatelessWidget {
       height: height * 0.1,
       width: height * 0.35,
       decoration: BoxDecoration(
-        color: kWhite60,
+        color: kGreen,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -29,6 +30,7 @@ class ContainerWidget extends StatelessWidget {
           Icon(
             icon,
             size: height * 0.05,
+            color: kWhite,
           ),
           kWidth20,
           Text(

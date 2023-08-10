@@ -4,6 +4,7 @@ import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_sizes.dart';
 import 'package:load_management/src/controller/date_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/farmer_irrigation_requirement_screen.dart';
+import 'package:load_management/src/view/new%20schedule%20screen/all_farmers_list.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
 import '../widgets/common_appbar_widget.dart';
@@ -82,7 +83,9 @@ class NewScheduleScreen extends StatelessWidget {
                         children: [
                           ElevatedButtonWidget(
                             onPressed: () {
-                              Get.to(()=> const FarmerIrrigationRequirementScreen());
+                              Get.to(
+                                () => const AllFarmersListScreen(),
+                              );
                             },
                             text: 'Irrigation requirements',
                             widget: const Icon(

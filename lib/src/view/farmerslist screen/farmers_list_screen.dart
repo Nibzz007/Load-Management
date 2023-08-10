@@ -43,15 +43,15 @@ class FarmersListScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              // const FarmerIrrigationRequirementScreen(),
-                              const FarmerCropsScreen(),
-                        ),
-                      );
-                    },
+                    // onTap: () {
+                    //   Navigator.of(context).push(
+                    //     MaterialPageRoute(
+                    //       builder: (context) =>
+                    //           // const FarmerIrrigationRequirementScreen(),
+                    //           const FarmerCropsScreen(),
+                    //     ),
+                    //   );
+                    // },
                     splashColor: kGreen300,
                     title: Text(
                       'सांबा मातो',

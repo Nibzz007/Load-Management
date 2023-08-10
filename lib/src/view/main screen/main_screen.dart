@@ -12,7 +12,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: kBlack,
+      backgroundColor: kWhite,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
