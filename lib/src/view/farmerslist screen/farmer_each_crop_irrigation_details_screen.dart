@@ -29,7 +29,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(60),
-        child: CommonAppbarWidget(text: 'Farmer name'),
+        child: CommonAppbarWidget(text: 'Irrigation requirements'),
       ),
       body: SizedBox(
         height: double.infinity,
@@ -72,6 +72,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                   height: height,
                   width: width,
                   hintText: 'Select pumb',
+                  list: controller.dropdownItems,
                 ),
                 kHeight20,
                 const TextWidget(text: 'How long are you using each day'),

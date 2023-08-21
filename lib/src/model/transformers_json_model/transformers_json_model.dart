@@ -19,7 +19,7 @@ class TransformersJsonModel {
   @JsonKey(name: 'district')
   String? district;
   @JsonKey(name: 'power_rating')
-  int? powerRating;
+  num? powerRating;
   @JsonKey(name: 'lat')
   dynamic lat;
   @JsonKey(name: 'long')
@@ -44,15 +44,4 @@ class TransformersJsonModel {
 
   Map<String, dynamic> toJson() => _$TransformersJsonModelToJson(this);
 }
-/* {
-            "id": 1,
-            "created_at": "2023-08-11T06:35:18.226097Z",
-            "updated_at": "2023-08-11T06:35:18.226109Z",
-            "name": "Dhanora Makta",
-            "name_mr": "धानोरा मक्ता",
-            "village": "Dhanora",
-            "district": "Nanded",
-            "power_rating": 100.0,
-            "lat": null,
-            "long": null
-        } */
+

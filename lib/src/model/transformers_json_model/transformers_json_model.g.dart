@@ -20,7 +20,7 @@ TransformersJsonModel _$TransformersJsonModelFromJson(
       nameMr: json['name_mr'] as String?,
       village: json['village'] as String?,
       district: json['district'] as String?,
-      powerRating: json['power_rating'] as int?,
+      powerRating: json['power_rating'] as num?,
       lat: json['lat'],
       long: json['long'],
     );

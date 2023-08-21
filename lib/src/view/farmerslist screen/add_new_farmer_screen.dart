@@ -99,10 +99,13 @@ class AddNewFarmerScreen extends StatelessWidget {
                     ElevatedButtonWidget(
                       backgroundColor: kGreen,
                       onPressed: () {
-                        if (irrigationDb.values.isEmpty||cropdb.values.isEmpty||soilDb.values.isEmpty) {
+                        if (irrigationDb.values.isEmpty ||
+                            cropdb.values.isEmpty ||
+                            soilDb.values.isEmpty||transformerDb.values.isEmpty) {
                           getallcrops();
                           getSoils();
                           getirrigation();
+                          gettransformers();
                         }
                         // if(!formKey.currentState!.validate()){
                         //   return;

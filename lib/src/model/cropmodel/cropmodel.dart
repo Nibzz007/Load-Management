@@ -1,5 +1,6 @@
 import 'package:hive_flutter/adapters.dart';
 part 'cropmodel.g.dart';
+
 @HiveType(typeId: 2)
 class CropModel {
   @HiveField(0)

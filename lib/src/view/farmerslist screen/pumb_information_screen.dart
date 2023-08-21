@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/core/app_sizes.dart';
+import 'package:load_management/db/dbmodels.dart';
 import 'package:load_management/src/controller/drop_down_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/widgets/drop_down_container_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
@@ -45,7 +46,7 @@ class PumbInformationScreen extends StatelessWidget {
                 height: height,
                 width: width,
                 hintText: 'DT id',
-              ),
+                list:controller.transformers),
               kHeight20,
               const TextWidget(text: 'Pumb capacity'),
               kHeight10,
@@ -60,6 +61,7 @@ class PumbInformationScreen extends StatelessWidget {
                 height: height,
                 width: width,
                 hintText: 'Select the water source',
+                list: controller.dropdownItems,
               ),
               kHeight20,
               const TextWidget(
