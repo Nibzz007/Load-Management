@@ -12,6 +12,8 @@ import 'package:load_management/src/model/soil_json_model/soil_json_model.dart';
 import 'package:load_management/src/model/soilmodel/soilmodel.dart';
 import 'package:load_management/src/model/transformers_json_model/transformers_json_model.dart';
 import 'package:load_management/src/model/trnasformersmodel/transformermodel.dart';
+import 'package:load_management/src/model/user_api_model/crop.dart';
+import 'package:load_management/src/model/user_api_model/user_api_model.dart';
 
 getallcrops() async {
   final response = await http.get(Uri.parse(baseurl + cropsurl));
@@ -110,5 +112,24 @@ gettransformers() async {
     log(transformerDb.values.length.toString());
   } else {
     log(response.statusCode.toString());
+  }
+}
+
+Future<List<String>> getallfarmers() async {
+  final response = await http.get(Uri.parse(farmers));
+  if (response.statusCode == 200) {
+    // log(response.body);
+    final dataList = json.decode(response.body);
+    final List<dynamic> userjson = dataList['data'];
+    List<String>usernames=[];
+    for(int i=0;i<userjson.length;i++){
+usernames.add(userjson[i]['name']);
+    }
+    log('${usernames}');
+
+   return usernames;
+  } else {
+    log(response.statusCode.toString());
+    return [];
   }
 }

@@ -18,6 +18,7 @@ late Box<IrrigatioModel> irrigationDb;
 openIrrigationDb() async {
   irrigationDb = await Hive.openBox<IrrigatioModel>('irrigationdb');
 }
+
 late Box<TransforerModel> transformerDb;
 opentransformferdbs() async {
   transformerDb = await Hive.openBox<TransforerModel>('transformersdb');

@@ -42,7 +42,7 @@ class _DropDownContainerWidgetState extends State<DropDownContainerWidget> {
             children: [
               DropdownButton(
                 hint: Text(selected == null ? widget.hintText : selected!),
-                items: (widget.list?? controller.dropdownItems)
+                items: (widget.list ?? controller.dropdownItems)
                     .map((item) => DropdownMenuItem(
                           value: item,
                           child: Text(item),
@@ -51,12 +51,9 @@ class _DropDownContainerWidgetState extends State<DropDownContainerWidget> {
                 onChanged: (value) {
                   selected = value;
                   controller.updateSelectedOption(value!);
-                  controller.addcrop(value);
                   log(value.toString());
                   setState(() {});
-
                 },
-                
               )
             ],
           ),

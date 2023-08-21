@@ -1,7 +1,8 @@
 import 'package:hive_flutter/adapters.dart';
 part 'transformermodel.g.dart';
+
 @HiveType(typeId: 5)
-class TransforerModel{
+class TransforerModel {
   @HiveField(0)
   int? id;
   @HiveField(1)
@@ -35,5 +36,4 @@ class TransforerModel{
     this.lat,
     this.long,
   });
-
 }

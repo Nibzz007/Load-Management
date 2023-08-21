@@ -79,7 +79,9 @@ class CropInformationScreen extends StatelessWidget {
                           Column(
                             children: [
                               ElevatedButtonWidget(
-                                onPressed: () {},
+                                onPressed: () {
+                                  controller.addcrop();
+                                },
                                 text: 'Add more',
                                 widget: const Icon(
                                   Icons.add,

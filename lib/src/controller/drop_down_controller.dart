@@ -26,29 +26,36 @@ class DropDownController extends GetxController {
 
   void updateSelectedOption(String newValue) {
     selectedOption.value = newValue;
-  }
-
-  void addcrop(String selectedname) {
-    if (cropNames.contains(selectedname)) {
-      cropslist.add(
-          cropdb.values.where((element) => element.name == selectedname).first);
-      log(cropslist.length.toString());
-      log(cropslist[0].name!);
-      log('yes');
-    } else if (soillist.contains(selectedname)) {
-      soillmodelist.add(
-          soilDb.values.where((element) => element.name == selectedname).first);
-    } else if (iriigationlist.contains(selectedname)) {
-      irrigationmodellist.add(irrigationDb.values
-          .where((element) => element.name == selectedname)
-          .first);
-    } else if (transformers.contains(selectedname)) {
-      transformermodelist.add(transformerDb.values
-          .where((element) => element.name == selectedname)
-          .first);
+    if (cropNames.contains(newValue)) {
+      selectedcrop = newValue;
+    } else if (soillist.contains(newValue)) {
+      selectedsoil = newValue;
+    } else if (iriigationlist.contains(newValue)) {
+      selectedirrigation = newValue;
+    } else if (transformers.contains(newValue)) {
+      selectedtransformer = newValue;
     }
   }
 
-  var selectedcrop = 'Option 1'.obs;
+  String selectedcrop = '';
+  String selectedsoil = '';
+  String selectedirrigation = '';
+  String selectedtransformer = '';
+
+  void addcrop() {
+    cropslist.add(
+        cropdb.values.where((element) => element.name == selectedcrop).first);
+    soillmodelist.add(
+        soilDb.values.where((element) => element.name == selectedsoil).first);
+    irrigationmodellist.add(irrigationDb.values
+        .where((element) => element.name == selectedirrigation)
+        .first);
+    log(cropslist.length.toString());
+    log(cropslist.length.toString());
+    log(cropslist.length.toString());
+    log(cropslist.length.toString());
+  }
+
+  // var selectedcrop = 'Option 1'.obs;
 // var selected =
 }

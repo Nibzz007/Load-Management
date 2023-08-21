@@ -44,4 +44,3 @@ class TransformersJsonModel {
 
   Map<String, dynamic> toJson() => _$TransformersJsonModelToJson(this);
 }
-

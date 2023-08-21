@@ -98,19 +98,19 @@ class AddNewFarmerScreen extends StatelessWidget {
                   children: [
                     ElevatedButtonWidget(
                       backgroundColor: kGreen,
-                      onPressed: () {
+                      onPressed: ()async {
                         if (irrigationDb.values.isEmpty ||
                             cropdb.values.isEmpty ||
-                            soilDb.values.isEmpty||transformerDb.values.isEmpty) {
-                          getallcrops();
-                          getSoils();
-                          getirrigation();
-                          gettransformers();
+                            soilDb.values.isEmpty ||
+                            transformerDb.values.isEmpty) {
+                         await getallcrops();
+                         await getSoils();
+                         await getirrigation();
+                         await gettransformers();
+                          Get.to(() => CropInformationScreen());
+                        } else {
+                          Get.to(() => CropInformationScreen());
                         }
-                        // if(!formKey.currentState!.validate()){
-                        //   return;
-                        // }
-                        Get.to(() => CropInformationScreen());
                       },
                       text: 'Continue',
                       widget: const Icon(
