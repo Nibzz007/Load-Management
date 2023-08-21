@@ -99,7 +99,8 @@ class AddNewFarmerScreen extends StatelessWidget {
                     ElevatedButtonWidget(
                       backgroundColor: kGreen,
                       onPressed: ()async {
-                        if (irrigationDb.values.isEmpty ||
+                        if(formKey.currentState!.validate()){
+                          if (irrigationDb.values.isEmpty ||
                             cropdb.values.isEmpty ||
                             soilDb.values.isEmpty ||
                             transformerDb.values.isEmpty) {
@@ -110,6 +111,7 @@ class AddNewFarmerScreen extends StatelessWidget {
                           Get.to(() => CropInformationScreen());
                         } else {
                           Get.to(() => CropInformationScreen());
+                        }
                         }
                       },
                       text: 'Continue',

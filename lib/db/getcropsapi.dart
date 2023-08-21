@@ -125,8 +125,6 @@ Future<List<String>> getallfarmers() async {
     for(int i=0;i<userjson.length;i++){
 usernames.add(userjson[i]['name']);
     }
-    log('${usernames}');
-
    return usernames;
   } else {
     log(response.statusCode.toString());

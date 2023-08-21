@@ -72,7 +72,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                   height: height,
                   width: width,
                   hintText: 'Select pumb',
-                  list: controller.dropdownItems,
+                  list: controller.sourceTypeItems,
                 ),
                 kHeight20,
                 const TextWidget(text: 'How long are you using each day'),

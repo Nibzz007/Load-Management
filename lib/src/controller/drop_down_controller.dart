@@ -8,8 +8,9 @@ import 'package:load_management/src/model/soilmodel/soilmodel.dart';
 import 'package:load_management/src/model/trnasformersmodel/transformermodel.dart';
 
 class DropDownController extends GetxController {
-  var selectedOption = 'Option 1'.obs;
-  List<String> dropdownItems = ['Option 1', 'Option 2', 'Option 3'];
+  var selectedOption = 'Open well'.obs;
+  List<String> dropdownItems = ['Open well', 'Bore well', 'Others'];
+  List<String> sourceTypeItems = ['Open well', 'Bore well', 'Others'];
   List<String> cropNames =
       cropdb.values.map((soilModel) => soilModel.name!).toList();
   List<String> soillist =
@@ -23,7 +24,7 @@ class DropDownController extends GetxController {
   List<SoilModel> soillmodelist = <SoilModel>[].obs;
   List<IrrigatioModel> irrigationmodellist = <IrrigatioModel>[].obs;
   List<TransforerModel> transformermodelist = <TransforerModel>[].obs;
-
+  List<String> source = <String>[].obs;
   void updateSelectedOption(String newValue) {
     selectedOption.value = newValue;
     if (cropNames.contains(newValue)) {
@@ -41,6 +42,7 @@ class DropDownController extends GetxController {
   String selectedsoil = '';
   String selectedirrigation = '';
   String selectedtransformer = '';
+  String selectedSourcetype = '';
 
   void addcrop() {
     cropslist.add(
@@ -54,6 +56,11 @@ class DropDownController extends GetxController {
     log(cropslist.length.toString());
     log(cropslist.length.toString());
     log(cropslist.length.toString());
+  }
+
+  addpumpinfo() {
+    transformermodelist.add(transformerDb.values.where((element) => element.name==selectedtransformer).first);
+    source.add(selectedSourcetype);
   }
 
   // var selectedcrop = 'Option 1'.obs;

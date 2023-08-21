@@ -1,8 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/core/app_sizes.dart';
 import 'package:load_management/db/dbmodels.dart';
 import 'package:load_management/src/controller/drop_down_controller.dart';
+import 'package:load_management/src/controller/load_management_controller.dart';
+import 'package:load_management/src/model/farmer_add_model.dart';
 import 'package:load_management/src/view/farmerslist%20screen/widgets/drop_down_container_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
 import 'package:load_management/src/view/widgets/text_widget.dart';
@@ -18,6 +22,9 @@ class PumbInformationScreen extends StatelessWidget {
   void handleOptionChange(int value) {
     selectedOption.value = value;
   }
+
+  final LoadManagementController controller2 =
+      Get.put(LoadManagementController());
 
   DropDownController controller = Get.find<DropDownController>();
 
@@ -93,7 +100,9 @@ class PumbInformationScreen extends StatelessWidget {
                   Column(
                     children: [
                       ElevatedButtonWidget(
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.addpumpinfo();
+                        },
                         text: 'Add more',
                         widget: const Icon(
                           Icons.add,
@@ -103,8 +112,23 @@ class PumbInformationScreen extends StatelessWidget {
                       ),
                       kHeight20,
                       ElevatedButtonWidget(
-                        onPressed: () {},
-                        text: 'Continue',
+                        onPressed: () async {
+                          if (controller.transformermodelist.isEmpty) {
+                            controller.addpumpinfo();
+                          }
+                          await farmersDb.add(FarmerModel(
+                            name: controller2.nameController.text,
+                            area: controller2.totalAreaController.text,
+                            crops: controller.cropslist,
+                            ghatNumber: controller2.ghatNumberController.text,
+                            id: 11,
+                            ispumping: selectedOption.value == 0 ? true : false,
+                            number: controller2.phoneNumberController.text,
+                            transformers: controller.transformermodelist,
+                          ));
+                          log(farmersDb.values.length.toString());
+                        },
+                        text: 'Save',
                         widget: const Icon(
                           Icons.navigate_next,
                           color: kWhite,

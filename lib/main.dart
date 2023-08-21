@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:load_management/db/dbmodels.dart';
 import 'package:load_management/src/model/cropmodel/cropmodel.dart';
+import 'package:load_management/src/model/farmer_add_model.dart';
 import 'package:load_management/src/model/irrgationmodel/irrigationmodel.dart';
 import 'package:load_management/src/model/soilmodel/soilmodel.dart';
 import 'package:load_management/src/model/trnasformersmodel/transformermodel.dart';
@@ -15,6 +16,8 @@ void main() async {
   Hive.registerAdapter(SoilModelAdapter());
   Hive.registerAdapter(IrrigatioModelAdapter());
   Hive.registerAdapter(TransforerModelAdapter());
+  Hive.registerAdapter(FarmerModelAdapter());
+  await openFarmersDb();
   await opencropdb();
   await opensoildb();
   await openIrrigationDb();

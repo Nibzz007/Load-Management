@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:load_management/src/model/cropmodel/cropmodel.dart';
+import 'package:load_management/src/model/farmer_add_model.dart';
 import 'package:load_management/src/model/irrgationmodel/irrigationmodel.dart';
 import 'package:load_management/src/model/soilmodel/soilmodel.dart';
 import 'package:load_management/src/model/trnasformersmodel/transformermodel.dart';
@@ -22,4 +23,9 @@ openIrrigationDb() async {
 late Box<TransforerModel> transformerDb;
 opentransformferdbs() async {
   transformerDb = await Hive.openBox<TransforerModel>('transformersdb');
+}
+late Box<FarmerModel>farmersDb;
+openFarmersDb()async{
+  farmersDb = await Hive.openBox<FarmerModel>('farmersdb');
+
 }

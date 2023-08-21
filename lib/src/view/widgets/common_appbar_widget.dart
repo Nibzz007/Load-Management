@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:load_management/core/app_style.dart';
+import 'package:load_management/src/view/widgets/testscreen.dart';
 
 import '../../../core/app_color.dart';
 
@@ -21,6 +23,7 @@ class CommonAppbarWidget extends StatelessWidget {
         style: appBarTextStyle,
       ),
       centerTitle: true,
+      actions: [IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const TestScreen(),));}, icon: const Icon(Icons.home))],
     );
   }
 }
