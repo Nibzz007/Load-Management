@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/core/app_sizes.dart';
+import 'package:load_management/src/controller/date_controller.dart';
 import 'package:load_management/src/controller/drop_down_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/widgets/drop_down_container_widget.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
@@ -19,6 +20,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
   }
 
   DropDownController controller = Get.put(DropDownController());
+  DateController dateController = Get.put(DateController());
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                 TextFormFieldWidget(
                   hintText: '3',
                   keyboardType: TextInputType.number,
+                  controller: dateController.noOfIriigationController,
                 ),
                 kHeight20,
                 const TextWidget(text: 'Number of irrigation days required'),
@@ -50,13 +53,17 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                 TextFormFieldWidget(
                   hintText: '10',
                   keyboardType: TextInputType.number,
+                  controller: dateController.noOfIriigationDaysController,
                 ),
                 kHeight20,
-                const TextWidget(text: 'Within how many days irrigation will start'),
+                const TextWidget(
+                  text: 'Within how many days irrigation will start',
+                ),
                 kHeight10,
                 TextFormFieldWidget(
                   hintText: '5',
                   keyboardType: TextInputType.number,
+                  controller: dateController.iriigationStartController,
                 ),
                 kHeight20,
                 const TextWidget(text: 'Pumb used'),
@@ -72,9 +79,12 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                 TextFormFieldWidget(
                   hintText: '8',
                   keyboardType: TextInputType.number,
+                  controller: dateController.iriigationLongController,
                 ),
                 kHeight20,
-                const TextWidget(text: 'Transfer water from one source to another'),
+                const TextWidget(
+                  text: 'Transfer water from one source to another',
+                ),
                 kHeight10,
                 Obx(
                   () => RadioListTile(
@@ -96,23 +106,29 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                 ),
                 kHeight20,
                 const TextWidget(
-                    text:
-                        'How long are you using the source for transfer everyday'),
+                  text:
+                      'How long are you using the source for transfer everyday',
+                ),
                 kHeight10,
                 TextFormFieldWidget(
                   hintText: '8',
                   keyboardType: TextInputType.number,
+                  controller: dateController.sourceUseEachDayController,
                 ),
                 kHeight20,
                 const TextWidget(
-                    text: 'Number of days can change for the irrigation'),
+                  text: 'Number of days can change for the irrigation',
+                ),
                 kHeight10,
                 TextFormFieldWidget(
                   hintText: '8',
                   keyboardType: TextInputType.number,
+                  controller: dateController.changeOfDaydsController,
                 ),
                 kHeight20,
-                const TextWidget(text: 'Wheter night irrigation is acceptable ?'),
+                const TextWidget(
+                  text: 'Wheter night irrigation is acceptable ?',
+                ),
                 kHeight10,
                 Obx(
                   () => RadioListTile(
@@ -138,6 +154,7 @@ class EachCropIrrigationDetailScreen extends StatelessWidget {
                 TextFormFieldWidget(
                   hintText: '26',
                   keyboardType: TextInputType.number,
+                  controller: dateController.slotDurationController,
                 ),
                 kHeight30,
                 ElevatedButtonWidget(

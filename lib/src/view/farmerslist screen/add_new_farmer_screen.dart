@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_sizes.dart';
+import 'package:load_management/db/dbmodels.dart';
+import 'package:load_management/db/getcropsapi.dart';
 import 'package:load_management/src/controller/load_management_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/crop_information_screen.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
@@ -12,8 +14,9 @@ import '../widgets/common_appbar_widget.dart';
 class AddNewFarmerScreen extends StatelessWidget {
   AddNewFarmerScreen({super.key});
 
-  // final LoadManagementController controller =
-  //     Get.put(LoadManagementController());
+  final LoadManagementController controller =
+      Get.put(LoadManagementController());
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -27,101 +30,96 @@ class AddNewFarmerScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              kHeight50,
-              const TextWidget(text: 'Name of the Farmer'),
-              kHeight10,
-              TextFormFieldWidget(
-                hintText: 'eg: Rohit',
-                keyboardType: TextInputType.text,
-              ),
-              kHeight20,
-              const TextWidget(text: 'Phone number'),
-              kHeight10,
-              TextFormFieldWidget(
-                hintText: '9645285560',
-                keyboardType: TextInputType.number,
-              ),
-              kHeight20,
-              const TextWidget(text: 'Ghat number'),
-              kHeight10,
-              TextFormFieldWidget(
-                hintText: '34',
-                keyboardType: TextInputType.number,
-              ),
-              kHeight20,
-              const TextWidget(text: 'Total area'),
-              kHeight20,
-              TextFormFieldWidget(
-                hintText: '20',
-                keyboardType: TextInputType.number,
-              ),
-              // Column(
-              //   children: [
-              //     Obx(
-              //       () => RadioListTile(
-              //         activeColor: kGreen,
-              //         value: 0,
-              //         groupValue: selectedOption.value,
-              //         onChanged: (value) => handleOptionChange(value!),
-              //         title: const Text('विहिरीचा'),
-              //       ),
-              //     ),
-              //     Obx(
-              //       () => RadioListTile(
-              //         activeColor: kGreen,
-              //         value: 1,
-              //         groupValue: selectedOption.value,
-              //         onChanged: (value) => handleOptionChange(value!),
-              //         title: const Text('बोअर वेल'),
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              // kHeight10,
-              // const TextWidget(text: 'पिके निवडणे'),
-              // kHeight10,
-              // Column(
-              //   children: List.generate(
-              //     8,
-              //     (index) => Row(
-              //       children: [
-              //         Obx(
-              //           () => Checkbox(
-              //             activeColor: kGreen,
-              //             value: controller.checkboxStates[index],
-              //             onChanged: (value) {
-              //               controller.checkboxStates[index] = value!;
-              //             },
-              //           ),
-              //         ),
-              //         kWidth10,
-              //         Text(controller.crops[index]),
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              kHeight80,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButtonWidget(
-                    backgroundColor: kGreen,
-                    onPressed: () {
-                      Get.to(() => CropInformationScreen());
-                    },
-                    text: 'Continue',
-                    widget: const Icon(
-                      Icons.navigate_next,
-                      color: kWhite,
+          child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                kHeight50,
+                const TextWidget(text: 'Name of the Farmer'),
+                kHeight10,
+                TextFormFieldWidget(
+                  hintText: 'eg: Rohit',
+                  controller: controller.nameController,
+                  keyboardType: TextInputType.text,
+                  validator: (value) {
+                    if (value != null && value.length < 3) {
+                      return 'Enter a valid name';
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                kHeight20,
+                const TextWidget(text: 'Phone number'),
+                kHeight10,
+                TextFormFieldWidget(
+                  hintText: '9645285560',
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value != null && value.length < 10) {
+                      return 'Enter a valid phone number';
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                kHeight20,
+                const TextWidget(text: 'Ghat number'),
+                kHeight10,
+                TextFormFieldWidget(
+                  hintText: '34',
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value != null && value.length < 1) {
+                      return 'Enter a valid ghat number';
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                kHeight20,
+                const TextWidget(text: 'Total area'),
+                kHeight20,
+                TextFormFieldWidget(
+                  hintText: '20',
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value != null && value.length < 1) {
+                      return 'Field cannot be empty';
+                    } else {
+                      return null;
+                    }
+                  },
+                ),
+                kHeight80,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButtonWidget(
+                      backgroundColor: kGreen,
+                      onPressed: () {
+                        if (irrigationDb.values.isEmpty||cropdb.values.isEmpty||soilDb.values.isEmpty) {
+                          getallcrops();
+                          getSoils();
+                          getirrigation();
+                        }
+                        // if(!formKey.currentState!.validate()){
+                        //   return;
+                        // }
+                        Get.to(() => CropInformationScreen());
+                      },
+                      text: 'Continue',
+                      widget: const Icon(
+                        Icons.navigate_next,
+                        color: kWhite,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              kHeight20,
-            ],
+                  ],
+                ),
+                kHeight20,
+              ],
+            ),
           ),
         ),
       ),

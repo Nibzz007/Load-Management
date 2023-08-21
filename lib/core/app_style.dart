@@ -25,11 +25,8 @@ TextStyle mainTextStyle = const TextStyle(
 
 // Main screen
 
-TextStyle mainScreenTextStyle = const TextStyle(
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
-  color: kWhite
-);
+TextStyle mainScreenTextStyle =
+    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: kWhite);
 
 // Appbar
 

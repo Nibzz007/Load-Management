@@ -6,7 +6,8 @@ class DropDownContainerWidget extends StatelessWidget {
   DropDownContainerWidget({
     super.key,
     required this.height,
-    required this.width, required this.hintText,
+    required this.width,
+    required this.hintText,
   });
 
   final double height;

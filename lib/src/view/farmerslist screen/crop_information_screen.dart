@@ -87,7 +87,7 @@ class CropInformationScreen extends StatelessWidget {
                               kHeight20,
                               ElevatedButtonWidget(
                                 onPressed: () {
-                                  Get.to(()=> PumbInformationScreen());
+                                  Get.to(() => PumbInformationScreen());
                                 },
                                 text: 'Continue',
                                 widget: const Icon(

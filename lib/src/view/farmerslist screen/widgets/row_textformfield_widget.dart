@@ -4,7 +4,8 @@ import '../../widgets/text_form_field_widget.dart';
 
 class RowTextFormFieldWidget extends StatelessWidget {
   const RowTextFormFieldWidget({
-    super.key, required this.text,
+    super.key,
+    required this.text,
   });
 
   final String text;

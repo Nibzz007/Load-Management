@@ -30,4 +30,13 @@ class DateController extends GetxController {
       },
     );
   }
+
+  // irrigation requirement screen
+  TextEditingController noOfIriigationController = TextEditingController();
+  TextEditingController noOfIriigationDaysController = TextEditingController();
+  TextEditingController iriigationStartController = TextEditingController();
+  TextEditingController iriigationLongController = TextEditingController();
+  TextEditingController sourceUseEachDayController = TextEditingController();
+  TextEditingController changeOfDaydsController = TextEditingController();
+  TextEditingController slotDurationController = TextEditingController();
 }

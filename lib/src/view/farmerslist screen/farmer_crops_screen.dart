@@ -29,7 +29,7 @@ class FarmerCropsScreen extends StatelessWidget {
                 Icons.arrow_forward_ios_outlined,
               ),
               onTap: () {
-                Get.to(()=> EachCropIrrigationDetailScreen());
+                Get.to(() => EachCropIrrigationDetailScreen());
               },
               splashColor: kGreen300,
             );

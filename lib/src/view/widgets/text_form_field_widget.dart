@@ -11,7 +11,9 @@ class TextFormFieldWidget extends StatelessWidget {
     this.obscureText = false,
     this.fillColor = kWhite,
     this.readOnly = false,
-    this.onTap, this.controller,
+    this.onTap,
+    this.controller,
+    this.validator,
   });
 
   final Widget? prefixIcon;
@@ -22,10 +24,12 @@ class TextFormFieldWidget extends StatelessWidget {
   final void Function()? onTap;
   final bool readOnly;
   final TextEditingController? controller;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      validator: validator,
       onTap: onTap,
       readOnly: readOnly,
       obscureText: obscureText,
