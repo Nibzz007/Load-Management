@@ -8,6 +8,7 @@ import 'package:load_management/src/controller/drop_down_controller.dart';
 import 'package:load_management/src/controller/load_management_controller.dart';
 import 'package:load_management/src/model/farmer_add_model.dart';
 import 'package:load_management/src/view/farmerslist%20screen/widgets/drop_down_container_widget.dart';
+import 'package:load_management/src/view/main%20screen/main_screen.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
 import 'package:load_management/src/view/widgets/text_widget.dart';
 import '../../../core/app_color.dart';
@@ -127,6 +128,7 @@ class PumbInformationScreen extends StatelessWidget {
                             transformers: controller.transformermodelist,
                           ));
                           log(farmersDb.values.length.toString());
+                          Get.offAll(MainScreen());
                         },
                         text: 'Save',
                         widget: const Icon(
