@@ -51,10 +51,11 @@ class PumbInformationScreen extends StatelessWidget {
               const TextWidget(text: 'DT id'),
               kHeight10,
               DropDownContainerWidget(
-                  height: height,
-                  width: width,
-                  hintText: 'DT id',
-                  list: controller.transformers),
+                height: height,
+                width: width,
+                hintText: 'DT id',
+                list: controller.transformers,
+              ),
               kHeight20,
               const TextWidget(text: 'Pumb capacity'),
               kHeight10,
@@ -117,16 +118,19 @@ class PumbInformationScreen extends StatelessWidget {
                           if (controller.transformermodelist.isEmpty) {
                             controller.addpumpinfo();
                           }
-                          await farmersDb.add(FarmerModel(
-                            name: controller2.nameController.text,
-                            area: controller2.totalAreaController.text,
-                            crops: controller.cropslist,
-                            ghatNumber: controller2.ghatNumberController.text,
-                            id: 11,
-                            ispumping: selectedOption.value == 0 ? true : false,
-                            number: controller2.phoneNumberController.text,
-                            transformers: controller.transformermodelist,
-                          ));
+                          await farmersDb.add(
+                            FarmerModel(
+                              name: controller2.nameController.text,
+                              area: controller2.totalAreaController.text,
+                              crops: controller.cropslist,
+                              ghatNumber: controller2.ghatNumberController.text,
+                              id: 11,
+                              ispumping:
+                                  selectedOption.value == 0 ? true : false,
+                              number: controller2.phoneNumberController.text,
+                              transformers: controller.transformermodelist,
+                            ),
+                          );
                           log(farmersDb.values.length.toString());
                           Get.offAll(MainScreen());
                         },

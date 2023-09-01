@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/src/controller/drop_down_controller.dart';
@@ -43,10 +42,12 @@ class _DropDownContainerWidgetState extends State<DropDownContainerWidget> {
               DropdownButton(
                 hint: Text(selected == null ? widget.hintText : selected!),
                 items: (widget.list ?? controller.dropdownItems)
-                    .map((item) => DropdownMenuItem(
-                          value: item,
-                          child: Text(item),
-                        ))
+                    .map(
+                      (item) => DropdownMenuItem(
+                        value: item,
+                        child: Text(item),
+                      ),
+                    )
                     .toList(),
                 onChanged: (value) {
                   selected = value;
