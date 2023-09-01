@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:load_management/db/dbmodels.dart';
 import 'package:load_management/src/model/cropmodel/cropmodel.dart';
