@@ -29,10 +29,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  dropdown_textfield: ^1.0.8
   flutter:
     sdk: flutter
   flutter_datetime_picker_plus: ^2.0.1
   get: ^4.6.5
+  hive: ^2.2.3
+  http: ^1.1.0
   intl: ^0.18.1
 
 dev_dependencies:

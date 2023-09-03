@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:load_management/core/app_color.dart';
 import 'package:load_management/core/app_sizes.dart';
-import 'package:load_management/src/controller/load_management_controller.dart';
 import 'package:load_management/src/view/farmerslist%20screen/crop_information_screen.dart';
 import 'package:load_management/src/view/widgets/elevated_button_widget.dart';
 import 'package:load_management/src/view/widgets/text_form_field_widget.dart';
@@ -10,7 +9,7 @@ import 'package:load_management/src/view/widgets/text_widget.dart';
 import '../widgets/common_appbar_widget.dart';
 
 class AddNewFarmerScreen extends StatelessWidget {
-  AddNewFarmerScreen({super.key});
+  const AddNewFarmerScreen({super.key});
 
   // final LoadManagementController controller =
   //     Get.put(LoadManagementController());

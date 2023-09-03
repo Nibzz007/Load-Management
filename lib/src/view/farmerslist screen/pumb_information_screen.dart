@@ -36,84 +36,86 @@ class PumbInformationScreen extends StatelessWidget {
         width: double.infinity,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              kHeight20,
-              const TextWidget(text: 'DT id'),
-              kHeight10,
-              DropDownContainerWidget(
-                height: height,
-                width: width,
-                hintText: 'DT id',
-              ),
-              kHeight20,
-              const TextWidget(text: 'Pumb capacity'),
-              kHeight10,
-              TextFormFieldWidget(
-                hintText: '50hP',
-                keyboardType: TextInputType.number,
-              ),
-              kHeight20,
-              const TextWidget(text: 'Source type'),
-              kHeight10,
-              DropDownContainerWidget(
-                height: height,
-                width: width,
-                hintText: 'Select the water source',
-              ),
-              kHeight20,
-              const TextWidget(
-                text: 'Water pumping directly to field from water source',
-              ),
-              kHeight10,
-              Obx(
-                () => RadioListTile(
-                  activeColor: kGreen,
-                  value: 0,
-                  groupValue: selectedOption.value,
-                  onChanged: (value) => handleOptionChange(value!),
-                  title: const Text('Yes'),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                kHeight20,
+                const TextWidget(text: 'DT id'),
+                kHeight10,
+                DropDownContainerWidget(
+                  height: height,
+                  width: width,
+                  hintText: 'DT id',
                 ),
-              ),
-              Obx(
-                () => RadioListTile(
-                  activeColor: kGreen,
-                  value: 1,
-                  groupValue: selectedOption.value,
-                  onChanged: (value) => handleOptionChange(value!),
-                  title: const Text('No'),
+                kHeight20,
+                const TextWidget(text: 'Pumb capacity'),
+                kHeight10,
+                TextFormFieldWidget(
+                  hintText: '50hP',
+                  keyboardType: TextInputType.number,
                 ),
-              ),
-              kHeight40,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      ElevatedButtonWidget(
-                        onPressed: () {},
-                        text: 'Add more',
-                        widget: const Icon(
-                          Icons.add,
-                          color: kWhite,
+                kHeight20,
+                const TextWidget(text: 'Source type'),
+                kHeight10,
+                DropDownContainerWidget(
+                  height: height,
+                  width: width,
+                  hintText: 'Select the water source',
+                ),
+                kHeight20,
+                const TextWidget(
+                  text: 'Water pumping directly to field from water source',
+                ),
+                kHeight10,
+                Obx(
+                  () => RadioListTile(
+                    activeColor: kGreen,
+                    value: 0,
+                    groupValue: selectedOption.value,
+                    onChanged: (value) => handleOptionChange(value!),
+                    title: const Text('Yes'),
+                  ),
+                ),
+                Obx(
+                  () => RadioListTile(
+                    activeColor: kGreen,
+                    value: 1,
+                    groupValue: selectedOption.value,
+                    onChanged: (value) => handleOptionChange(value!),
+                    title: const Text('No'),
+                  ),
+                ),
+                kHeight40,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        ElevatedButtonWidget(
+                          onPressed: () {},
+                          text: 'Add more',
+                          widget: const Icon(
+                            Icons.add,
+                            color: kWhite,
+                          ),
+                          backgroundColor: kGreen,
                         ),
-                        backgroundColor: kGreen,
-                      ),
-                      kHeight20,
-                      ElevatedButtonWidget(
-                        onPressed: () {},
-                        text: 'Continue',
-                        widget: const Icon(
-                          Icons.navigate_next,
-                          color: kWhite,
+                        kHeight20,
+                        ElevatedButtonWidget(
+                          onPressed: () {},
+                          text: 'Continue',
+                          widget: const Icon(
+                            Icons.navigate_next,
+                            color: kWhite,
+                          ),
+                          backgroundColor: kGreen,
                         ),
-                        backgroundColor: kGreen,
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ],
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
